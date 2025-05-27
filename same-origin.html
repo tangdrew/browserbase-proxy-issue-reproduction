@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenTok Test</title>
+    <script>
+        console.log('Setting up global error handlers...');
+        window.addEventListener('error', function (event) {
+            console.error('BROWSER GLOBAL ERROR:',
+                'Message: ' + event.message,
+                'File: ' + event.filename,
+                'Line: ' + event.lineno,
+                'Col: ' + event.colno,
+                'Error object:', event.error
+            );
+        });
+        window.addEventListener('unhandledrejection', function (event) {
+            console.error('BROWSER GLOBAL UNHANDLED REJECTION:', event.reason);
+        });
+        console.log('Global error handlers set up.');
+    </script>
+</head>
+
+<body>
+    <h1>OpenTok Test</h1>
+    <script src="./opentok.2.30.0.js"></script>
+</body>
+
+</html>
